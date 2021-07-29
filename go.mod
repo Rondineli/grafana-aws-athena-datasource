@@ -3,7 +3,7 @@ module github.com/mtanda/grafana-aws-athena-datasource
 go 1.12
 
 require (
-	github.com/aws/aws-sdk-go v1.19.37
+	github.com/aws/aws-sdk-go v1.28.5
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869
 	github.com/davecgh/go-spew v1.1.1
 	github.com/grafana/grafana v6.0.1+incompatible
