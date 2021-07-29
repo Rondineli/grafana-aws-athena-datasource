@@ -101,14 +101,14 @@ func (ds *AwsAthenaDatasource) CheckHealth(ctx context.Context, req *backend.Che
 	svc, err := ds.getClient(req.PluginContext.DataSourceInstanceSettings, "us-east-1")
 	if err != nil {
 		res.Status = backend.HealthStatusError
-		res.Message = "Unable to create client"
+		res.Message = "Unable to create client: ", err
 		return res, nil
 	}
 
 	_, err = svc.ListNamedQueriesWithContext(ctx, &athena.ListNamedQueriesInput{})
 	if err != nil {
 		res.Status = backend.HealthStatusError
-		res.Message = "Unable to call Athena API"
+		res.Message = "Unable to call Athena API: ", err
 		return res, nil
 	}
 
